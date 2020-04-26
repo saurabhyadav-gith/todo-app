@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Todo App</title>
+       
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery/3.4.1/jquery.min.js"></script> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+        <link rel="stylesheet" href="todo.Css">
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <form  action="/newtodo" method="POST">
+                 <input class="txtb" type="text" name="description" placeholder="Add a task" required>  <!--defining text area for adding todo -->
+                <input   class="txtc" type="text" name="category" placeholder="category eg:work" required>  <!--for defining category-->
+                <input  class="txtd" type="date" name="date" required>  <!--for defining date-->
+                <button class="btn">Create</button>
+
+            </form>
+
+            <div class="notcomp">
+                <h3> Not Completed</h3>
+
+                <div class="task">
+                    <ul>
+                    <% for (let i of todoList){ %>     <!--loop for iterating over the todoList which store list of todo-->
+                        <li>
+                            <div class="details">
+                        <p>
+                            <%= i.description %>
+                        </p>
+                        <p>
+                            <%= i.category %>
+                        </p>
+                        <p>
+                            <%= i.date %>
+                        </p>
+                    </div>
+                    
+                        <div class="delete-button">
+                            <a href="/delete-todo/?id=<%= i._id %>">  <!--for deleting todo-->
+                                <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </li>
+                    
+                    <% } %>
+                </ul>
+                           
+                </div>
+                
+            </div>
+
+        </div> 
+        
+       
+        
+
+
+              
+    </body>
+</html>

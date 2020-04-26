@@ -1,0 +1,72 @@
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    
+    height: 100vh;
+    background: url("sitebg.jpg") no-repeat center fixed;
+    background-size: cover;
+    font-family:'The Historia Demo';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-head h1{
+    text-align: center;
+    font-family:'The Historia Demo', Brush Script MT ;
+    color: rgba(255,255,255, .3);
+    font-size: 2.4rem;
+    
+    
+}
+.btn a{
+    text-decoration: none;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    background: none;
+    border: 4px solid;
+    color: #3498db;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    
+}
+.btn::before, .btn::after{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 5px;
+    background:black;
+    transform: skewX(50deg);
+    transition:.4s linear;
+
+
+}
+
+.btn::before{
+    top:-5px;
+    left: 10%;
+}
+
+.btn::after{
+    bottom: -5px;
+    right: 10%;
+}
+
+.btn:hover::before{
+    left: 80%;
+}
+.btn:hover::after{
+    right: 80%;
+}
+
